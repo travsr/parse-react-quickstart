@@ -6,13 +6,11 @@ I have found this tech stack to be extremely versatile, and many of my projects 
 
 This repository has allowed me to save a significant amount of time with first-time setup when starting new projects and I hope it can be helpful to others as well.
 
-# Table of Contents
 - [parse-react-quickstart](#parse-react-quickstart)
-- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
-- [Local Server](#local-server)
-  - [Option 1: Local Node + Local MongoDB Server](#option-1-local-node--local-mongodb-server)
-  - [Option 2: Local Node + Remote MongoDB Server](#option-2-local-node--remote-mongodb-server)
+- [Running Locally](#running-locally)
+  - [Local Node + Local MongoDB Server](#local-node--local-mongodb-server)
+  - [Local Node + Remote MongoDB Server](#local-node--remote-mongodb-server)
 - [ReactJS App Development](#reactjs-app-development)
   - [Development](#development)
   - [Production](#production)
@@ -38,10 +36,10 @@ Use [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) to install the
 npm install
 ```
 
-# Local Server
+# Running Locally
 You can run your project locally for development purposes. You have two options when doing so:
 
-## Option 1: Local Node + Local MongoDB Server
+## Local Node + Local MongoDB Server
 Run Node server and the MongoDB locally. Note that you must have [MongoDB installed](https://docs.mongodb.com/manual/installation/) on your machine.
 
 Start the mongo daemon and start the server.
@@ -51,7 +49,7 @@ mongod && npm start
 
 By default, the server will connect to a local MongoDB instance at `mongodb://localhost:27017/dev`
 
-## Option 2: Local Node + Remote MongoDB Server
+## Local Node + Remote MongoDB Server
 
 The second option is to specify a remote MongoDB URI in the enviroment variables `/.env` file. The Parse Server will try to connect to this DB, but the server itself will run locally.
 ```
