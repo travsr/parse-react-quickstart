@@ -35911,12 +35911,19 @@ function (_Component) {
         className: "cover-heading"
       }, "Hello, world."), _react.default.createElement("p", {
         className: "lead"
-      }, "Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own."), _react.default.createElement("p", {
+      }, "The server is now running."), _react.default.createElement("p", {
         className: "lead"
       }, _react.default.createElement("a", {
         href: "#",
         className: "btn btn-lg btn-secondary"
-      }, "Learn more")))), _react.default.createElement(_reactRouterDom.BrowserRouter, {
+      }, "Learn more")), _react.default.createElement("nav", {
+        className: "navbar navbar-dark bg-dark"
+      }, _react.default.createElement("li", {
+        className: "nav-item"
+      }, _react.default.createElement("a", {
+        className: "nav-link",
+        href: "#"
+      }, "Link"))))), _react.default.createElement(_reactRouterDom.BrowserRouter, {
         basename: "/"
       }, _react.default.createElement(_reactRouter.Switch, null, _react.default.createElement(_reactRouter.Route, {
         exact: true,
@@ -66169,7 +66176,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63249" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63826" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

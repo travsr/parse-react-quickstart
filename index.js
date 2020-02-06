@@ -12,7 +12,7 @@ let serverUrl = process.env.SERVER_URL;
 let port = process.env.PORT || 5000;
 
 if (!databaseUri) {
-	databaseUri = 'mongodb://localhost:27017/dev';
+	databaseUri = 'mongodb://localhost:27017/quickstart';
   	console.log('MONGODB_URI not specified, will use localhost: ' + databaseUri);
 }
 
@@ -39,7 +39,7 @@ let api = new ParseServer({
 // More details: https://github.com/parse-community/parse-dashboard
 let dashboard = new ParseDashboard({
 	"apps": [{
-		"serverURL" :    process.env.SERVER_URL,
+		"serverURL" :    serverUrl,
 		"appId" :        process.env.APP_ID,
 		"masterKey" :    process.env.MASTER_KEY,
 		"appName" :      process.env.APP_NAME
@@ -67,12 +67,12 @@ app.use(mountPath, api);
 app.use('/dashboard', dashboard);
 
 // Serve our webapp specifically from the '/' path
-app.get('/', (req, res) => {
+app.get('/webapp', (req, res) => {
 	res.sendFile('public/webapp/index.html', {root : __dirname});
 });
 
 // Serve the webapp from any routes that the webapp's react-router uses
-app.get('/:path', (req, res) => {
+app.get('/webapp/:path', (req, res) => {
 	res.sendFile('public/webapp/index.html', {root : __dirname});
 });
 
@@ -82,7 +82,8 @@ app.use(express.static(__dirname + '/public'));
 // Create and start the http server
 let httpServer = require('http').createServer(app);
 httpServer.listen(port, () => {
-    console.log('Parse Server Running on Port ' + port + '.');
+	console.log('Parse Server Running on Port ' + port + '.');
+	console.log("Server URL: " + serverUrl);
 });
 
 // Add the ParseServer to our http server

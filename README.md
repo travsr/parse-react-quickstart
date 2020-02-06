@@ -27,7 +27,7 @@ This repository has allowed me to save a significant amount of time with first-t
 Clone
 
 ```bash
-git clone 
+git clone https://github.com/travsr/parse-react-quickstart.git
 ```
 
 Use [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) to install the dependencies.

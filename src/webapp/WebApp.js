@@ -30,10 +30,15 @@ class WebApp extends Component {
                 <div className="cover-container d-flex w-100 p-3 mx-auto">
                     <main role="main" className="inner cover">
                         <h1 className="cover-heading">Hello, world.</h1>
-                        <p className="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+                        <p className="lead">The server is now running.</p>
                         <p className="lead">
                             <a href="#" className="btn btn-lg btn-secondary">Learn more</a>
                         </p>
+                        <nav className="navbar navbar-dark bg-dark">
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">Link</a>
+                            </li>
+                        </nav>
                     </main>
                     
                 </div>
