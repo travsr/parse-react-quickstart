@@ -35716,6 +35716,8 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _reactRouterDom = require("react-router-dom");
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -35759,7 +35761,16 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, _react.default.createElement("p", null, "Sample View 1"));
+      return _react.default.createElement("div", null, _react.default.createElement("p", null, _react.default.createElement(_reactRouterDom.Link, {
+        to: "/view1",
+        className: "badge badge-primary",
+        style: {
+          marginRight: 10
+        }
+      }, "View 1"), _react.default.createElement(_reactRouterDom.Link, {
+        to: "/view2",
+        className: "badge badge-secondary"
+      }, "View 2")), _react.default.createElement("p", null, "Sample View 1"));
     }
   }]);
 
@@ -35768,7 +35779,7 @@ function (_Component) {
 
 var _default = SampleView2;
 exports.default = _default;
-},{"react":"../../node_modules/react/index.js"}],"Views/SampleView2.js":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js"}],"Views/SampleView2.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35777,6 +35788,8 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -35821,7 +35834,16 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", null, _react.default.createElement("p", null, "Sample View 2"));
+      return _react.default.createElement("div", null, _react.default.createElement("p", null, _react.default.createElement(_reactRouterDom.Link, {
+        to: "/view1",
+        className: "badge badge-secondary",
+        style: {
+          marginRight: 10
+        }
+      }, "View 1"), _react.default.createElement(_reactRouterDom.Link, {
+        to: "/view2",
+        className: "badge badge-primary"
+      }, "View 2")), _react.default.createElement("p", null, "and here is Sample View 2"));
     }
   }]);
 
@@ -35830,7 +35852,7 @@ function (_Component) {
 
 var _default = SampleView1;
 exports.default = _default;
-},{"react":"../../node_modules/react/index.js"}],"WebApp.js":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js"}],"WebApp.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35893,7 +35915,9 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement("div", {
+      return _react.default.createElement(_reactRouterDom.BrowserRouter, {
+        basename: "/webapp"
+      }, _react.default.createElement("div", {
         className: "cover-parent text-center",
         style: {
           position: "absolute",
@@ -35903,29 +35927,15 @@ function (_Component) {
           bottom: 0
         }
       }, _react.default.createElement("div", {
-        className: "cover-container d-flex w-100 p-3 mx-auto"
-      }, _react.default.createElement("main", {
-        role: "main",
-        className: "inner cover"
+        className: "cover-container w-100 p-3 mx-auto"
       }, _react.default.createElement("h1", {
         className: "cover-heading"
       }, "Hello, world."), _react.default.createElement("p", {
         className: "lead"
-      }, "The server is now running."), _react.default.createElement("p", {
-        className: "lead"
-      }, _react.default.createElement("a", {
-        href: "#",
-        className: "btn btn-lg btn-secondary"
-      }, "Learn more")), _react.default.createElement("nav", {
-        className: "navbar navbar-dark bg-dark"
-      }, _react.default.createElement("li", {
-        className: "nav-item"
-      }, _react.default.createElement("a", {
-        className: "nav-link",
-        href: "#"
-      }, "Link"))))), _react.default.createElement(_reactRouterDom.BrowserRouter, {
-        basename: "/"
-      }, _react.default.createElement(_reactRouter.Switch, null, _react.default.createElement(_reactRouter.Route, {
+      }, "The server is now running."), _react.default.createElement("p", null, "View the parse ", _react.default.createElement("a", {
+        className: "badge badge-primary",
+        href: "/dashboard"
+      }, "dashboard"))), _react.default.createElement("hr", null), _react.default.createElement(_reactRouter.Switch, null, _react.default.createElement(_reactRouter.Route, {
         exact: true,
         path: "/view1",
         component: _SampleView.default
@@ -66176,7 +66186,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63826" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51415" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
